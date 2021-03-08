@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'j*6u-#=g@^mhqu0bv7rw3t$q=4ae+3hl3&@q#-kwz^2rniaikn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://guarded-shore-41486.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
