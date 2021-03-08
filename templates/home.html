@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css'%} ">
+    <script src="{% static 'app.js' %}"></script>  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Bevásárló lista</h1>
+    {% csrf_token %}
+        <div class="kozep">
+            <div id="tetelek">
+                <table id="itemek">
+                    <tr id="nagy">
+                        <th></th>
+                        <th>Termék</th>
+                        <th>Mennyiség</th> 
+                    </tr>
+                    {% for tetel in tetelek %}
+                    <tr>
+                        <td> <input type="checkbox"></td>
+                        <td>{{tetel.nev}}</td>
+                        <td class="mennyiseg">{{tetel.mennyiseg}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div class="új"> 
+                    <div id="cim">Új termék hozzáadása</div>
+                    <div>Termék: <input type="text" id="inputitem" maxlength="30"> <span class="marginp"></span> Mennyiség: <input type="text" id="inputamount" maxlength="10" size="6"></div>
+                    <div id="buttonka" onclick="onKlikk()">Hozzáadás</div>
+                </div>
+                
+                
+            </div>
+    </div>
+    <div class="torles">
+        <div class="gombd" onclick="confirmgomb()">Kijelöltek törlése</div>
+    </div>
+  
+</body>
+</html>
